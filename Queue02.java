@@ -63,6 +63,7 @@ class Queue02 {
     public void enqueue(int dt) {
         if (IsFull()) {
             System.out.println ("Queue sudah penuh");
+            System.exit(0);
         } else {
             if (IsEmpty()) {
                 front = rear = 0;
@@ -82,6 +83,7 @@ class Queue02 {
         int dataMasuk = 0;
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
+            System.exit(0);
         } else {
             dataMasuk = data[front];
             size --;
