@@ -2,6 +2,8 @@ package Jobsheet12;
 
 import java.util.Scanner;
 
+import org.w3c.dom.Node;
+
 public class DoubleLinkedList02 {
     Node02 head;
     Node02 tail;
@@ -86,7 +88,7 @@ public class DoubleLinkedList02 {
 
     public void print() {
         if (isEmpty()) {
-            System.out.println("Linked List masih kosong"); //Sudah mennampilkan pesan saat kosong
+            System.out.println("Linked List masih kosong"); //Sudah menampilkan pesan saat kosong
             return;
         }
 
@@ -94,6 +96,19 @@ public class DoubleLinkedList02 {
         while (current != null) {
             current.data.tampil();
             current = current.next;
+        }
+    }
+
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        System.out.println("=== Tampil Terbalik ===");
+        Node02 current = tail;          
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;   
         }
     }
 
@@ -110,6 +125,7 @@ public class DoubleLinkedList02 {
             System.out.println("4. Hapus data di awal");
             System.out.println("5. Hapus data di akhir");
             System.out.println("6. Tampilkan data");
+            System.out.println("7. Tampilkan data dengan terbalik");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             pilihan = scan.nextInt();
@@ -144,6 +160,10 @@ public class DoubleLinkedList02 {
 
                 case 6:
                     list.print();
+                    break;
+
+                case 7:
+                    list.printReverse();
                     break;
 
                 case 0:
