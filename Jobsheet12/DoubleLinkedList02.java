@@ -2,8 +2,6 @@ package Jobsheet12;
 
 import java.util.Scanner;
 
-import org.w3c.dom.Node;
-
 public class DoubleLinkedList02 {
     Node02 head;
     Node02 tail;
@@ -32,9 +30,31 @@ public class DoubleLinkedList02 {
     }
 
     public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong");
+            return;
+        } 
+        
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
     }
 
     public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong");
+            return;
+        }  
+        
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
     }
 
     public void addFirst(Mahasiswa02 data) {
